@@ -1,11 +1,10 @@
 package com.example.study_springboot_login2.login.domain.dto;
 
 import com.example.study_springboot_login2.login.domain.entity.User;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @AllArgsConstructor
+@ToString
 @Getter
 @Builder
 public class UserJoinRequest {

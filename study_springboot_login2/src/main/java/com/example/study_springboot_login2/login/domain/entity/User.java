@@ -1,5 +1,6 @@
 package com.example.study_springboot_login2.login.domain.entity;
 
+import com.example.study_springboot_login2.login.domain.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,5 +24,14 @@ public class User {
     private String userName;
     private String password;
     private String email;
+
+    public UserDto toDto(){
+        return UserDto.builder()
+                .id(this.id)
+                .userName(this.userName)
+                .password(this.password)
+                .email(this.email)
+                .build();
+    }
 
 }

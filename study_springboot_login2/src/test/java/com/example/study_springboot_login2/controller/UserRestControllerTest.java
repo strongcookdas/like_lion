@@ -1,5 +1,6 @@
 package com.example.study_springboot_login2.controller;
 
+import com.example.study_springboot_login2.login.domain.dto.UserDto;
 import com.example.study_springboot_login2.login.domain.dto.UserJoinRequest;
 import com.example.study_springboot_login2.login.domain.dto.UserJoinResponse;
 import com.example.study_springboot_login2.login.exception.ErrorCode;
@@ -43,7 +44,7 @@ class UserRestControllerTest {
     @DisplayName("회원가입 성공")
     void join_success() throws Exception {
 
-        when(userService.join(any())).thenReturn(mock(UserJoinResponse.class));
+        when(userService.join(any())).thenReturn(mock(UserDto.class));
 
         mockMvc.perform(post("/api/v1/user/join")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -62,6 +63,6 @@ class UserRestControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(userJoinRequest)))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isConflict());
     }
 }
