@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class LoginExceptionHandler {
+public class ExceptionManager {
 
     @ExceptionHandler(UserJoinException.class)
-    public ResponseEntity<String> userJoinExceptionHandler(UserJoinException e){
+    public ResponseEntity<String> userJoinExceptionHandler(UserJoinException e) {
         return ResponseEntity.status(e.getErrorCode().getHttpStatus()).body(e.getMessage());
     }
 }

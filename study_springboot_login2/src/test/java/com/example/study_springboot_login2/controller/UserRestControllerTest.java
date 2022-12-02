@@ -55,13 +55,13 @@ class UserRestControllerTest {
 
     @Test
     @DisplayName("회원가입 실패")
-    void join_fail() throws Exception{
+    void join_fail() throws Exception {
 
-        when(userService.join(any())).thenThrow(new UserJoinException(ErrorCode.DUPLICATED_USER_NAME,ErrorCode.DUPLICATED_USER_NAME.getMessage()));
+        when(userService.join(any())).thenThrow(new UserJoinException(ErrorCode.DUPLICATED_USER_NAME, ErrorCode.DUPLICATED_USER_NAME.getMessage()));
 
         mockMvc.perform(post("/api/v1/user/join")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsBytes(userJoinRequest)))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsBytes(userJoinRequest)))
                 .andDo(print())
                 .andExpect(status().isConflict());
     }
