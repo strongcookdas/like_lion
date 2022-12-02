@@ -1,11 +1,11 @@
-package com.example.study_springboot_login.exception.exception;
+package com.example.study_springboot_login.login.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class UserException extends RuntimeException{
+public class UserJoinException extends RuntimeException {
     private ErrorCode errorCode;
     private String message;
 }

@@ -1,4 +1,4 @@
-package com.example.study_springboot_login.exception.exception;
+package com.example.study_springboot_login.login.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @Getter
 public enum ErrorCode {
-    NOT_FOUND(HttpStatus.NOT_FOUND,"resource is not found");
+    DUPLICATED_USER_NAME(HttpStatus.CONFLICT,"중복된 user name입니다.");
 
     private HttpStatus httpStatus;
     private String message;
