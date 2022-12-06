@@ -2,9 +2,11 @@ package com.example.study_springboot_login2.login.controller;
 
 import com.example.study_springboot_login2.login.domain.dto.UserJoinRequest;
 import com.example.study_springboot_login2.login.domain.dto.UserJoinResponse;
+import com.example.study_springboot_login2.login.domain.dto.UserLoginRequest;
 import com.example.study_springboot_login2.login.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +25,11 @@ public class UserRestController {
     public ResponseEntity<UserJoinResponse> userJoin(@RequestBody UserJoinRequest userJoinRequest) {
         log.info(userJoinRequest.toString());
         return ResponseEntity.ok().body(userService.join(userJoinRequest).toResponse());
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> log(@RequestBody UserLoginRequest userLoginRequest){
+        return ResponseEntity.ok().body(userService.login(userLoginRequest.getUserName(),userLoginRequest.getPassword()));
     }
 
 }
