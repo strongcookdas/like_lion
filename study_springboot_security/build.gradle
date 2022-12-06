@@ -21,7 +21,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    //implementation 'com.github.wnameless.spring:spring-security-jjwt:0.2.0'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    implementation 'nz.net.ultraq.jaxb:jaxb-utilities:2.1.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
