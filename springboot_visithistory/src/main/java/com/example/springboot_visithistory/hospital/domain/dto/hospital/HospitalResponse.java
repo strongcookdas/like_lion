@@ -1,5 +1,6 @@
-package com.example.springboot_visithistory.hospital.domain.dto;
+package com.example.springboot_visithistory.hospital.domain.dto.hospital;
 
+import com.example.springboot_visithistory.hospital.domain.dto.review.ReviewResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

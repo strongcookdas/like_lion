@@ -1,7 +1,7 @@
 package com.example.springboot_visithistory.hospital.service;
 
-import com.example.springboot_visithistory.hospital.domain.dto.HospitalResponse;
-import com.example.springboot_visithistory.hospital.domain.dto.ReviewResponse;
+import com.example.springboot_visithistory.hospital.domain.dto.hospital.HospitalResponse;
+import com.example.springboot_visithistory.hospital.domain.dto.review.ReviewResponse;
 import com.example.springboot_visithistory.hospital.domain.entity.Hospital;
 import com.example.springboot_visithistory.hospital.domain.entity.Review;
 import com.example.springboot_visithistory.hospital.repository.HospitalRepository;

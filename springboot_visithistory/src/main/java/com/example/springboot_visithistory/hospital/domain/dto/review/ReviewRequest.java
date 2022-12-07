@@ -1,4 +1,4 @@
-package com.example.springboot_visithistory.hospital.domain.dto;
+package com.example.springboot_visithistory.hospital.domain.dto.review;
 
 import com.example.springboot_visithistory.hospital.domain.entity.Hospital;
 import com.example.springboot_visithistory.hospital.domain.entity.Review;
